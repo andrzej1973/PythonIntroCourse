@@ -68,7 +68,5 @@ def main():
         AnotherOperation = str(input("Do you want to continoue? Yes - Y, No - any other key"))
     print("See you...")
 
-main()
-
 if __name__=="__main__":
     main()

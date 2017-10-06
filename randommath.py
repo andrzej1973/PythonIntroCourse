@@ -19,11 +19,13 @@ loopMax=random.randint(1,50)
 
 print("Beginning mathing sequence of", loopMax, "calculations.")
 
+print('\n\n')
+
 for index in range(loopMax):
     number1=random.randint(-99,99)
     number2=random.randint(-99,99)
     operator=operations[random.randint(0,len(operations)-1)]
     result=calculator.ExecuteOperation(operator, number1, number2,1)
     print("iteration:",index,"number1=", number1, "number2=", number2, "operator=", operator, "result=", result)
-
+    print('\n')
 #calculator.main()
