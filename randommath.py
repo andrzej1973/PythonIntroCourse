@@ -28,4 +28,15 @@ for index in range(loopMax):
     result=calculator.ExecuteOperation(operator, number1, number2,1)
     print("iteration:",index,"number1=", number1, "number2=", number2, "operator=", operator, "result=", result)
     print('\n')
-#calculator.main()
+
+dictionaryOfThinks={};
+
+shadesOfBlue=["lightblue","blue","darkblue"]
+
+dictionaryOfThinks['Apple']="Tasty fruit, which is nice to eat"
+dictionaryOfThinks['Banana']="Yellow fruit"
+dictionaryOfThinks[3]="Number bigger then 2 and smaller then 4"
+dictionaryOfThinks['Blue']=shadesOfBlue
+
+for idx in dictionaryOfThinks:
+    print("idx:",idx,'\n',"Dictionary Item:",dictionaryOfThinks[idx],'\n')
