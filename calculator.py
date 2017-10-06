@@ -21,19 +21,33 @@ def div(num1,num2):
         return 0
 
 
-def ExecuteOperation(operation, number1,number2):
+def ExecuteOperation(operation, number1,number2,outputtype):
     """Executes operation specified in int operation and
     executes it over num1 and num2"""
-    if (operation == 1 or operation=='+'):  # 1 means add
-        print("The sum is:", add(number1, number2))
-    elif (operation == 2 or operation=='-'):  # 2 means substract
-        print("The substraction is:", sub(number1, number2))
-    elif (operation == 3 or operation=='*'):  # 3 means multiply
-        print("The multiplication is:", mul(number1, number2))
-    elif (operation == 4 or operation=='/'):  # 4 means divide
-        print("The division is:", div(number1, number2))
-    else:  # catch unsupported requests
-        print("Unsuported request")
+    if (outputtype==0):
+        if (operation == 1 or operation=='+'):  # 1 means add
+            print("The sum is:", add(number1, number2))
+        elif (operation == 2 or operation=='-'):  # 2 means substract
+            print("The substraction is:", sub(number1, number2))
+        elif (operation == 3 or operation=='*'):  # 3 means multiply
+            print("The multiplication is:", mul(number1, number2))
+        elif (operation == 4 or operation=='/'):  # 4 means divide
+            print("The division is:", div(number1, number2))
+        else:  # catch unsupported requests
+            print("Unsuported request")
+    elif (outputtype==1):
+        if (operation == 1 or operation=='+'):  # 1 means add
+            return add(number1, number2)
+        elif (operation == 2 or operation=='-'):  # 2 means substract
+            return sub(number1,number2)
+        elif (operation == 3 or operation=='*'):  # 3 means multiply
+            return mul(number1, number2)
+        elif (operation == 4 or operation=='/'):  # 4 means divide
+            return div(number1, number2)
+        else:  # catch unsupported requests
+            print("Unsuported request")
+    else:
+        print("unsoported output type...")
 
 def main():
     AnotherOperation="Y"
@@ -50,10 +64,11 @@ def main():
                 print("unsuported argument, please try again...")
                 SupportedArgument=False
 
-        ExecuteOperation(operation,num1,num2)
+        ExecuteOperation(operation,num1,num2,0)
         AnotherOperation = str(input("Do you want to continoue? Yes - Y, No - any other key"))
     print("See you...")
 
+main()
 
 if __name__=="__main__":
     main()
